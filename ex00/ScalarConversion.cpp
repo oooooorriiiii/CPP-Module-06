@@ -99,7 +99,7 @@ void	ScalarConversion::_convertChar() {
 		else if (_ftStoD(_argumentString) >= 0 && _ftStoD(_argumentString) <= 255)
 		{
 			_char = static_cast<char>(_ftStoD(_argumentString));
-			if (_char >= 0 &&  _char <= 127)
+			if (_char >= 0) // _char <= 127 <- always true due to limited range of data type
 			{
 				if (!std::isprint(_char))
 					_message_char = "Non displayable";
